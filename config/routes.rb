@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :course_registrations
+  resources :students
+  resources :courses
   resources :instructors
   resources :cohorts
   root to: 'pages#home'
