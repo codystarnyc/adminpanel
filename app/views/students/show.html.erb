@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<% if current_user %>
 <p>
   <strong>First name:</strong>
   <%= @student.first_name %>
@@ -39,6 +39,12 @@
   <strong>Cohort:</strong>
   <%= @student.cohort_id %>
 </p>
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<% else %>
+
+<%= link_to 'Sign up', new_user_registration_path %>
+<%= link_to 'Sign in', new_user_session_path %>
+<% end %>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

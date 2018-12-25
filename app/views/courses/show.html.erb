@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<% if current_user %>
 <p>
   <strong>Title:</strong>
   <%= @course.title %>
@@ -24,6 +24,12 @@
   <strong>Updated at:</strong>
   <%= @course.updated_at %>
 </p>
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<% else %>
+
+<%= link_to 'Sign up', new_user_registration_path %>
+<%= link_to 'Sign in', new_user_session_path %>
+<% end %>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
