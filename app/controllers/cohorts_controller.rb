@@ -69,6 +69,6 @@ class CohortsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cohort_params
-      params.require(:cohort).permit(:title, :start_date, :end_date, :instructor_id, :created_at, :updated_at)
+      params.require(:cohort).permit(:title, :start_date, :end_date, :instructor_id, :created_at, :updated_at, :course_id)
     end
 end
