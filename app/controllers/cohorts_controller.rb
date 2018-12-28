@@ -10,15 +10,24 @@ class CohortsController < ApplicationController
   # GET /cohorts/1
   # GET /cohorts/1.json
   def show
+       
+        # @course_registration = CourseRegistration.new
+        # @students = Student.all.sort
+        @cohort.students << Student.find(params[:q][:student_ids]) if params[:q]
+        @roster = @cohort.students.sort
+        @cohort = Cohort.find(params[:id])
+        @roster.delete(Student.find(params[:removestudent])) if params[:removestudent]
   end
 
   # GET /cohorts/new
   def new
     @cohort = Cohort.new
+    @instructors = Instructor.all
   end
 
   # GET /cohorts/1/edit
   def edit
+
   end
 
   # POST /cohorts

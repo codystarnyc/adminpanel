@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :instructor_id %>
-    <%= form.number_field :instructor_id %>
+    <%= form.collection_select :instructor_id, @instructors, :id, :full_name, prompt: true %>
   </div>
   
 
@@ -38,6 +38,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+      <%= form.submit  course.new_record? ? "Create Course" : "Update Course", :class => "btn btn-primary" %>
   </div>
 <% end %>

@@ -34,6 +34,37 @@
   <strong>Updated at:</strong>
   <%= @cohort.updated_at %>
 </p>
+
+
+<table id class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+        </tr>
+    </thead>
+    <tbody id="students">
+        <%= render @roster %>
+    </tbody>
+</table>
+
+ <h1>ADD STUDENT</h1>
+
+    <%= form_tag({controller: :cohorts, action: :update}, method: :get)%>
+    <div class="form-row">
+      <div class="form-symbol">
+        <i class="fas fa-user-graduate"></i>
+
+      </div>
+      <div>
+        <%= collection_select(:q, :student_ids, Student.all, :id, :full_name) %>
+      </div>
+    </div>
+    <%= submit_tag("ADD COURSE") %>
+
+
+   
+
 <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 <% else %>
 

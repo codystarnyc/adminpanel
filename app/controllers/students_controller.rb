@@ -5,11 +5,15 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.all
+   
   end
 
   # GET /students/1
   # GET /students/1.json
   def show
+    @student = Student.find(params[:id])
+    @student.cohorts << Cohort.find(params[:q][:q]) if params[:q]
+    @student.cohorts.delete(Cohort.find(params[:removecohort])) if params[:removecohort]
   end
 
   # GET /students/new

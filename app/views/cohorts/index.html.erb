@@ -2,37 +2,22 @@
 <% if current_user %>
 <h1>Cohorts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Instructor</th>
-      <th>Course</th>
-      <th>Created at</th>
-      <th>Updated at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cohorts.each do |cohort| %>
-      <tr>
-        <td><%= cohort.title %></td>
-        <td><%= cohort.start_date %></td>
-        <td><%= cohort.end_date %></td>
-        <td><%= cohort.instructor_id %></td>
-        <td><%= cohort.course_id %></td>
-        <td><%= cohort.created_at %></td>
-        <td><%= cohort.updated_at %></td>
-        <td><%= link_to 'Show', cohort %></td>
-        <td><%= link_to 'Edit', edit_cohort_path(cohort) %></td>
-        <td><%= link_to 'Destroy', cohort, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<div class="new-cohort"></div>
+<table id class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Instructor Id</th>
+        </tr>
+    </thead>
+    <tbody id="cohorts">
+        <%= render @cohorts %>
+    </tbody>
 </table>
+
+
 
 <br>
 <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>

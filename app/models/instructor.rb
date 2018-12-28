@@ -1,5 +1,5 @@
 class Instructor < ApplicationRecord
-
+    # belongs_to :users
     has_many :cohorts
     has_one_attached :photo
     # has_secure_password

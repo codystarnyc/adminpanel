@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :salary %>
-    <%= form.number_field :salary %>
+    <%= form.number_field :salary, min: 1, placeholder: "SALARY"  %>
   </div>
 
   <div class="field">
     <%= form.label :education %>
-    <%= form.text_field :education %>
+     <%= form.select(:education, [['High School'], ['College'], ['Master\'s Degree'], ['Doctorate']]) %>
   </div>
 
   <div class="field">

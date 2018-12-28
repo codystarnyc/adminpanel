@@ -25,10 +25,10 @@ class CourseRegistrationsController < ApplicationController
   # POST /course_registrations.json
   def create
     @course_registration = CourseRegistration.new(course_registration_params)
-
+    @student = Student.find(@course_registration[:student_id])
     respond_to do |format|
       if @course_registration.save
-        format.html { redirect_to @course_registration, notice: 'Course registration was successfully created.' }
+        format.html { flash[:notice] = "#{@student.full_name} was added to course" }
         format.json { render :show, status: :created, location: @course_registration }
       else
         format.html { render :new }
@@ -55,8 +55,9 @@ class CourseRegistrationsController < ApplicationController
   # DELETE /course_registrations/1.json
   def destroy
     @course_registration.destroy
+    @student = Student.find(@course_registration[:student_id])
     respond_to do |format|
-      format.html { redirect_to course_registrations_url, notice: 'Course registration was successfully destroyed.' }
+      format.html {  flash[:notice] = "'#{@student.full_name}' was removed" }
       format.json { head :no_content }
     end
   end
