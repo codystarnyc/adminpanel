@@ -30,6 +30,7 @@
 <%= link_to 'Sign up', new_user_registration_path %>
 <%= link_to 'Sign in', new_user_session_path %>
 <% end %>
-
+<% if can? :update, User %>
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
+<% end %>

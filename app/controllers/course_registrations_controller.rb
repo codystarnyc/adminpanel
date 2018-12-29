@@ -1,4 +1,6 @@
 class CourseRegistrationsController < ApplicationController
+  load_and_authorize_resource
+  before_action :authenticate_user!
   before_action :set_course_registration, only: [:show, :edit, :update, :destroy]
 
   # GET /course_registrations

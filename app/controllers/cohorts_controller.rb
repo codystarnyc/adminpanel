@@ -1,4 +1,6 @@
 class CohortsController < ApplicationController
+  load_and_authorize_resource
+  before_action :authenticate_user!
   before_action :set_cohort, only: [:show, :edit, :update, :destroy]
 
   # GET /cohorts
@@ -14,6 +16,7 @@ class CohortsController < ApplicationController
         # @course_registration = CourseRegistration.new
         # @students = Student.all.sort
         @cohort.students << Student.find(params[:q][:student_ids]) if params[:q]
+        authorize! :read, @cohort.students
         @roster = @cohort.students.sort
         @cohort = Cohort.find(params[:id])
         @roster.delete(Student.find(params[:removestudent])) if params[:removestudent]
