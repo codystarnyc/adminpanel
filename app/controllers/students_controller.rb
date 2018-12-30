@@ -17,10 +17,14 @@ class StudentsController < ApplicationController
     @student.cohorts << Cohort.find(params[:q][:q]) if params[:q]
     @student.cohorts.delete(Cohort.find(params[:removecohort])) if params[:removecohort]
   end
-
+ 
   # GET /students/new
   def new
     @student = Student.new
+    respond_to do |format|
+      format.html
+      format.js
+      end
   end
 
   # GET /students/1/edit
@@ -66,6 +70,16 @@ class StudentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # def new_release
+  #   @student = Student.find(params[:id])
+  #   @student = Student.new
+  #   respond_to do |format|
+  #     format.html
+  #     format.js
+  #   end
+  # end 
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,0 +1,79 @@
+<!-- Classic Modal -->
+                     
+                            <div class="modal-header">
+                              <h4 class="modal-title"></h4>
+                             
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                <i class="material-icons">clear</i>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <%= bootstrap_form_for(@student, remote: request.xhr?, html: { data: { modal: true } } do |form| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :education %>
+    <%= form.text_field :education %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cohort_id %>
+    <%= form.text_field :cohort_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.datetime_select :created_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :updated_at %>
+    <%= form.datetime_select :updated_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cohort_id %>
+    <%= form.text_field :cohort_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+    
+                            </div>
+                        
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-link">Nice Button</button>
+                              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  End Modal -->

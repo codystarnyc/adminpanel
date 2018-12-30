@@ -10,8 +10,13 @@ class ApplicationController < ActionController::Base
         format.js   { head :forbidden, content_type: 'text/html' }
       end
     end
-    
-
+   
+    def respond_modal_with(*args, &blk)
+      options = args.extract_options!
+      options[:responder] = ModalResponder
+      respond_with *args, options, &blk
+    end  
+   
 protected
 
 def configure_permitted_parameters

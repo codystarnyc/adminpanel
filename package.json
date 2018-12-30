@@ -1,5 +1,7 @@
 {
   "name": "adminpanel",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "material-dashboard": "^2.1.0"
+  }
 }

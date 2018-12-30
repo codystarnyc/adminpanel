@@ -1,5 +1,16 @@
-
-<%= form_with(model: student, local: true) do |form| %>
+<!-- Classic Modal -->
+                      <div class="modal fade" id="modal-window" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title"></h4>
+                             
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                <i class="material-icons">clear</i>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <%= bootstrap_form_for(@student, remote: request.xhr?, html: { data: { modal: true } } do |form| %>
   <% if student.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
@@ -56,3 +67,15 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+    
+                            </div>
+                        
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-link">Nice Button</button>
+                              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  End Modal -->
