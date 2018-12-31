@@ -62,13 +62,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.5'
 gem 'cancancan', '~> 2.3'
-gem 'responders', '~> 2.0'
+
 # Use bootstrap theme
-gem 'bootstrap', '~> 4.1.1'
+
 gem 'bootstrap_form'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.12.9'
-group :assets do
- gem 'bootstrap-modal-rails'
-end
+gem 'jquery-ui-rails'
