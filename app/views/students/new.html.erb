@@ -20,17 +20,17 @@
 
     <div class="field">
       <%= form.label :age %>
-      <%= form.number_field :age %>
+           <%= form.number_field :age, min: 0, max: 150 %>
     </div>
 
     <div class="field">
       <%= form.label :education %>
-      <%= form.text_field :education %>
+                    <%= form.select :education, ["High School", "Bachelor's", "Master's", "PHD"] %>
     </div>
 
     <div class="field">
-      <%= form.label :cohort_id %>
-      <%= form.text_field :cohort_id %>
+       <%= form.label :cohort %>
+      <%= form.collection_select :cohort_id, @cohorts, :id, :title, prompt: true %>
     </div>
 
     <div class="field">
@@ -43,11 +43,10 @@
       <%= form.datetime_select :updated_at %>
     </div>
 
-    <div class="field">
-      <%= form.label :cohort_id %>
-      <%= form.text_field :cohort_id %>
+  <div class="field">
+       <%= form.label :cohort %>
+      <%= form.collection_select :cohort_id, @cohorts, :id, :title, prompt: true %>
     </div>
-  </div>
 
   <div class="modal-footer">
     <%= form.submit %>

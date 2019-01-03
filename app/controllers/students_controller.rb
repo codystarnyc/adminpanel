@@ -21,6 +21,7 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = Student.new
+    @cohorts = Cohort.all
     respond_to do |format|
       format.html
       format.js
