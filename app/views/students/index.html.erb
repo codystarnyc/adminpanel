@@ -1,7 +1,5 @@
 <p class="notice"><%= notice %></p>
 
-
-
 <body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="rose" data-background-color="black" data-image="../assets/img/sidebar-1.jpg">
@@ -248,14 +246,16 @@
 <%= link_to 'Sign in', new_user_session_path %>
 <% end %>
 
+<%= link_to 'New Student', new_student_path, {'data-toggle' =>  "modal", 'data-target' => '#modal-window' }  %>
 
-<%= link_to 'New Student', new_student_path({:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'})  %><i class="material-icons">person add</i>
             
           <div class="modal fade" id="modal-window" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content"></div>           
                         </div>
           </div>
+
+
 
             </div>
           </div>
@@ -347,7 +347,6 @@
       <th>Cohort</th>
       <th>Created at</th>
       <th>Updated at</th>
-      <th>Cohort</th>
                           <th class="text-right">Actions</th>
                         </tr>
                       </tfoot>
@@ -362,7 +361,6 @@
         <td><%= student.cohort_id %></td>
         <td><%= student.created_at %></td>
         <td><%= student.updated_at %></td>
-        <td><%= student.cohort_id %></td>
         <td><%= link_to 'Show', student %> <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">computer</i></a></td>
         <td><%= link_to 'Edit', edit_student_path(student) %> <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">edit</i></a></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %>  <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a></td>
@@ -382,41 +380,7 @@
           <!-- end row -->
         </div>
       </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-          </div>
-        </div>
-      </footer>
+
     </div>
   </div>
   <div class="fixed-plugin">

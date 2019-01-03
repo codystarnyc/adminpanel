@@ -6,7 +6,7 @@
     <td><%= student.education %></td>
     <td>
         <% if can? :update, User %>
-            <%= link_to 'Edit', edit_student_path(student), remote: true, :class => 'btn btn-sm btn-secondary' %>
+            <%= link_to 'Edit', edit_student_path(student), :class => 'btn btn-sm btn-secondary' %>
             <%= link_to 'Delete', controller: :cohorts, action: :update, :removestudent => student.id, :class => 'btn btn-sm btn-danger' %>
         <% end %>
     </td>
