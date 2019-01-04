@@ -11,10 +11,10 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-          Pam
+        <a href="#" class="simple-text logo-mini">
+          PA
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="#" class="simple-text logo-normal">
           Academy Panel
         </a>
       </div>
@@ -26,7 +26,7 @@
           <div class="user-info">
             <a data-toggle="collapse" href="#collapseExample" class="username">
               <span>
-               Patrick Alcindor
+               Pamela Alcindor
                 <b class="caret"></b>
               </span>
             </a>
@@ -239,6 +239,12 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <div class="navbar-minimize">
+             <div class="navbar-minimize">
+              <button id="minimizeSidebar" class="btn btn-just-icon btn-white btn-fab btn-round">
+                <i class="material-icons text_align-center visible-on-sidebar-regular">more_vert</i>
+                <i class="material-icons design_bullet-list-67 visible-on-sidebar-mini">view_list</i>
+              </button>
+            </div>
               <% if current_user %>
 <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 <% else %>

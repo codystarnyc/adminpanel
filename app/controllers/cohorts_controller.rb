@@ -26,6 +26,7 @@ class CohortsController < ApplicationController
   def new
     @cohort = Cohort.new
     @instructors = Instructor.all
+    @course = Course.all
   end
 
   # GET /cohorts/1/edit
@@ -37,7 +38,7 @@ class CohortsController < ApplicationController
   # POST /cohorts.json
   def create
     @cohort = Cohort.new(cohort_params)
-
+    
     respond_to do |format|
       if @cohort.save
         format.html { redirect_to @cohort, notice: 'Cohort was successfully created.' }

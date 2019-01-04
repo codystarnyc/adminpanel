@@ -1,3 +1,4 @@
+<p class="notice"><%= notice %></p>
 <%= form_with(model: cohort, local: true) do |form| %>
   <% if cohort.errors.any? %>
     <div id="error_explanation">
@@ -28,13 +29,13 @@
 
   <div class="field">
     <%= form.label :instructor_id %>
-    <%= form.number_field :instructor_id %>
+  <%= form.collection_select :instructor_id, @instructors, :id, :full_name, prompt: true %>
   </div>
 
 
   <div class="field">
     <%= form.label :course_id %>
-    <%= form.number_field :course_id %>
+ <%= form.collection_select :course_id, @course, :id, :title, prompt: true %>
   </div>
 
   <div class="field">
