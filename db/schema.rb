@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_27_023255) do
+ActiveRecord::Schema.define(version: 2019_01_06_144617) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string "title"
@@ -53,10 +53,9 @@ ActiveRecord::Schema.define(version: 2018_12_27_023255) do
     t.string "last_name"
     t.integer "age"
     t.string "education"
-    t.string "cohort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cohort_id"], name: "index_students_on_cohort_id"
+    t.integer "cohort_id"
   end
 
   create_table "users", force: :cascade do |t|
