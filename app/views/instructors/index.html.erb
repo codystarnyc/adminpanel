@@ -336,7 +336,6 @@
       <th>Age</th>
       <th>Salary</th>
       <th>Education</th>
-      <th>User</th>
       <th class="disabled-sorting text-right">Actions</th>
     </tr>
                          
@@ -350,28 +349,15 @@
       <th>Age</th>
       <th>Salary</th>
       <th>Education</th>
-      <th>User</th>
       <th>Actions</th>
     </tr>
                         
                       
                       </tfoot>
                     
-                       <tbody>
-    <% @instructors.each do |instructor| %>
-      <tr>
-        <td><%= instructor.first_name %></td>
-        <td><%= instructor.last_name %></td>
-        <td><%= instructor.age %></td>
-        <td><%= instructor.salary %></td>
-        <td><%= instructor.education %></td>
-        <td><%= instructor.user_id %></td>
-        <td><%= link_to 'Show', instructor %></td>
-        <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
-        <td><%= link_to 'Destroy', instructor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+                  <tbody id="instructors">
+            <%= render @instructors %>
+        </tbody>
                        
                     </table>
                   </div>
@@ -385,41 +371,7 @@
           <!-- end row -->
         </div>
       </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-          </div>
-        </div>
-      </footer>
+      
     </div>
   </div>
   <div class="fixed-plugin">

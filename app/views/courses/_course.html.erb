@@ -1,0 +1,15 @@
+<tr id="course_<%= course.id %>">
+    <td><%= course.title %></td>
+    <td><%= course.total_hours %></td>
+    <td><%= course.instructor_id %></td>
+    <td><%= course.created_at %></td>
+    <td><%= course.updated_at %></td>
+    <td>
+        <%= link_to 'Roster', course_path(course), :class => 'btn btn-sm btn-info' %>
+        <% if can? :manage, User %>
+            <%= link_to 'Edit', edit_course_path(course), :class => 'btn btn-sm btn-secondary' %>
+            <%= link_to 'Delete', course, remote: true, :method => :delete, data: {confirm: "Delete Course: #{course.title}"}, :class => 'btn btn-sm btn-danger' %>
+        <% end %>
+      
+  </td>
+</tr>

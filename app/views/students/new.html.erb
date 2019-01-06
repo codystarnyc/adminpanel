@@ -28,10 +28,6 @@
                     <%= form.select :education, ["High School", "Bachelor's", "Master's", "PHD"] %>
     </div>
 
-    <div class="field">
-       <%= form.label :cohort %>
-      <%= form.collection_select :cohort_id, @cohorts, :id, :title, prompt: true %>
-    </div>
 
     <div class="field">
       <%= form.label :created_at %>
