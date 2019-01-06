@@ -1,43 +1,19 @@
-<%= form_with(model: course, local: true) do |form| %>
-  <% if course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+<%= form_for(@course) do |f| %>
+    <div id="error_explanation" class="bg-danger text-danger">
 
-      <ul>
-      <% course.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <%= f.text_field(:title) %>
+            <%= f.text_field(:total_hours) %>
+            <%= f.collection_select :instructor_id, @instructors, :id, :full_name, prompt: true %>
+        </div>
 
-  <div class="field">
-    <%= form.label :total_hours %>
-    <%= form.number_field :total_hours %>
-  </div>
-
-  <div class="field">
-    <%= form.label :instructor_id %>
-    <%= form.collection_select :instructor_id, @instructors, :id, :full_name, prompt: true %>
-  </div>
-  
-
-  <div class="field">
-    <%= form.label :created_at %>
-    <%= form.datetime_select :created_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :updated_at %>
-    <%= form.datetime_select :updated_at %>
-  </div>
-
-  <div class="actions">
-      <%= form.submit  course.new_record? ? "Create Course" : "Update Course", :class => "btn btn-primary" %>
-  </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= f.submit  @course.new_record? ? "Create Course" : "Update Course", :class => "btn btn-primary" %>
+            </div>
+        </div>
+    </div>
 <% end %>

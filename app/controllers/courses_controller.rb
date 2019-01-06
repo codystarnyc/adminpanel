@@ -27,7 +27,6 @@ end
   # GET /courses/1/edit
   def edit
     @instructors = Instructor.all
-    @course = Course.all
   end
 
   # POST /courses
