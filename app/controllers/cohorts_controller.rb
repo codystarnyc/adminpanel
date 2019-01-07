@@ -12,11 +12,13 @@ class CohortsController < ApplicationController
   # GET /cohorts/1
   # GET /cohorts/1.json
   def show
-        # @cohort = Cohort.find(params[:id])
+       
         # @course_registration = CourseRegistration.new
         # @students = Student.all.sort
-        @cohort.students << Student.find(params[:q][:student_ids]) if params[:q]    
+        @cohort.students << Student.find(params[:q][:student_ids]) if params[:q]
+        authorize! :read, @cohort.students
         @roster = @cohort.students.sort
+        @cohort = Cohort.find(params[:id])
         @roster.delete(Student.find(params[:removestudent])) if params[:removestudent]
   end
 
@@ -29,9 +31,7 @@ class CohortsController < ApplicationController
 
   # GET /cohorts/1/edit
   def edit
-  #   @cohort = Cohort.new
-    @instructors = Instructor.all
-    @course = Course.all
+
   end
 
   # POST /cohorts
@@ -70,7 +70,7 @@ class CohortsController < ApplicationController
     @cohort.destroy
     respond_to do |format|
       format.html { redirect_to cohorts_url, notice: 'Cohort was successfully destroyed.' }
-      format.js 
+      format.json { head :no_content }
     end
   end
 
