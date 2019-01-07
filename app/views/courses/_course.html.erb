@@ -5,11 +5,10 @@
     <td><%= course.created_at %></td>
     <td><%= course.updated_at %></td>
     <td>
-        <%= link_to 'Roster', course_path(course), :class => 'btn btn-sm btn-info' %>
+    <%= link_to  course, :class => "btn btn-link btn-info btn-just-icon like" do %><i class="material-icons">computer</i><%end%>
         <% if can? :manage, User %>
-            <%= link_to 'Edit', edit_course_path(course), :class => 'btn btn-sm btn-secondary' %>
-            <%= link_to 'Delete', course, remote: true, :method => :delete, data: {confirm: "Delete Course: #{course.title}"}, :class => 'btn btn-sm btn-danger' %>
+         <%= link_to edit_course_path(course), :class=> "btn btn-link btn-warning btn-just-icon edit" do%><i class="material-icons">edit</i><%end%>
+         <%= link_to course, remote: true, :method => :delete,  data: { confirm: "Are you sure?"}, :class=> "btn btn-link btn-danger btn-just-icon remove" do%><i class="material-icons">close</i><%end%>
         <% end %>
-      
   </td>
 </tr>

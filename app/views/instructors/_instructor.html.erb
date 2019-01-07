@@ -6,9 +6,9 @@
     <td><%= instructor.education %></td>
     <td>
         <% if can? :manage, User %>
-            <%= link_to 'Show', instructor %>
-            <%= link_to 'Edit', edit_instructor_path(instructor), :class => 'btn btn-sm btn-secondary' %>
-            <%= link_to 'Delete', instructor, remote: true, :method => :delete, data: {confirm: "Delete Instructor: #{instructor.full_name}"}, :class => 'btn btn-sm btn-danger' %>
+         <%= link_to  instructor, :class => "btn btn-link btn-info btn-just-icon like" do %><i class="material-icons">computer</i><%end%>
+         <%= link_to edit_instructor_path(instructor), :class=> "btn btn-link btn-warning btn-just-icon edit" do%><i class="material-icons">edit</i><%end%>
+         <%= link_to instructor, remote: true, :method => :delete,  data: { confirm: "Delete Instructor: #{instructor.full_name}"}, :class=> "btn btn-link btn-danger btn-just-icon remove" do%><i class="material-icons">close</i><%end%>
         <% end %>
     </td>
 </tr>
