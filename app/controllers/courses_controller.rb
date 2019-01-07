@@ -26,7 +26,6 @@ end
 
   # GET /courses/1/edit
   def edit
-    @instructors = Instructor.all
   end
 
   # POST /courses
@@ -64,7 +63,8 @@ end
   def destroy
     @course.destroy
     respond_to do |format|
-      format.js
+      format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 

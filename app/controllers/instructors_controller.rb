@@ -6,7 +6,7 @@ class InstructorsController < ApplicationController
   # GET /instructors
   # GET /instructors.json
   def index
-    @instructor = Instructor.all
+    @instructors = Instructor.all
   end
 
   # GET /instructors/1
@@ -56,9 +56,11 @@ class InstructorsController < ApplicationController
   # DELETE /instructors/1
   # DELETE /instructors/1.json
   def destroy
-    @instructor.destroy
+    @instructor = Instructor.find(params[:id])
+    # @instructor.destroy
     respond_to do |format|
-      format.js 
+      format.html { redirect_to instructors_url, notice: 'Instructor was successfully destroyed.' }
+      format.js
     end
   end
 
