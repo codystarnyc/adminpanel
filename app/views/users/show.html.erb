@@ -1,2 +1,43 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+<% if current_user %>
+<p>
+  <strong>First name:</strong>
+  <%= @users.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @users.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @users.email %>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <%= @users.admin %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @users.created_at %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @users.updated_at %>
+</p>
+
+
+
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<% else %>
+
+<%= link_to 'Sign up', new_user_registration_path %>
+<%= link_to 'Sign in', new_user_session_path %>
+<% end %>
+
+<%= link_to 'Edit', users_edit_path(@users) %> |
+<%= link_to 'Back', users_index_path %>

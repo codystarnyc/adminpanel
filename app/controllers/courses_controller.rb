@@ -15,7 +15,7 @@ class CoursesController < ApplicationController
     # @roster = @course.course_registrations
     @instructors = Instructor.all
     @course_registration = CourseRegistration.new
-    @students = Student.joins('LEFT OUTER JOIN course_registrations ON course_registrations.student_id = students.id').where.not(id: CourseRegistration.where(course_id: @course.id).pluck(:student_id)).distinct
+    
 end
 
   # GET /courses/new

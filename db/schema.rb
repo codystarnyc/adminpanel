@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_06_144617) do
+ActiveRecord::Schema.define(version: 2019_01_08_023758) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string "title"
@@ -23,9 +23,11 @@ ActiveRecord::Schema.define(version: 2019_01_06_144617) do
   end
 
   create_table "course_registrations", force: :cascade do |t|
-    t.integer "course_id"
     t.integer "student_id"
-    t.index ["course_id"], name: "index_course_registrations_on_course_id"
+    t.integer "cohort_id"
+    t.integer "instructor_id"
+    t.index ["cohort_id"], name: "index_course_registrations_on_cohort_id"
+    t.index ["instructor_id"], name: "index_course_registrations_on_instructor_id"
     t.index ["student_id"], name: "index_course_registrations_on_student_id"
   end
 

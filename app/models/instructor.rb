@@ -2,6 +2,7 @@ class Instructor < ApplicationRecord
     # belongs_to :users
     has_many :cohorts
     has_one_attached :photo
+    has_many :course_registrations, dependent: :destroy
     # has_secure_password
     validates :age, :inclusion => {:in => 1..149, :message => "should be between 1 and 149"}
     validates_presence_of   :first_name

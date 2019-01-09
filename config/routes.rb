@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  get 'users/edit'
+  get 'users/show/:id' => 'users#show'
+  get 'users/edit' => 'users#edit'
   get 'users/index' => 'users#index'
   resources :course_registrations
   resources :students

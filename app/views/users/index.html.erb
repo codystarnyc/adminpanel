@@ -219,6 +219,10 @@
         <td><%= user.created_at %></td>
         <td><%= user.updated_at %></td>
        
+       <% if can? :manage, User %>
+        
+        
+     <% end %>
       </tr>
     <% end %>
   </tbody>

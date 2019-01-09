@@ -14,10 +14,12 @@ class CohortsController < ApplicationController
   def show
         # @cohort = Cohort.find(params[:id])
         # @course_registration = CourseRegistration.new
-        # @students = Student.all.sort
-        @cohort.students << Student.find(params[:q][:student_ids]) if params[:q]    
-        @roster = @cohort.students.sort
-        @roster.delete(Student.find(params[:removestudent])) if params[:removestudent]
+        # # @students = Student.all.sort
+        # @cohort.students << Student.find(params[:q][:student_ids]) if params[:q]    
+        @roster = @cohort.course_registrations
+        @course_registration = CourseRegistration.new
+        @students = Student.joins('LEFT OUTER JOIN course_registrations ON course_registrations.student_id = students.id').where.not(id: CourseRegistration.where(cohort_id: @cohort.id).pluck(:student_id)).distinct
+       
   end
 
   # GET /cohorts/new
