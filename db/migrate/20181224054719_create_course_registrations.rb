@@ -1,13 +1,11 @@
 class CreateCourseRegistrations < ActiveRecord::Migration[5.2]
   def change
-    create_table :course_registrations do |t|
-      t.bigint :course_id
+    create_table :course_registrations do |t| 
       t.bigint :student_id
+      t.bigint :cohort_id
+      t.bigint :instructor_id
       t.datetime :created_at
       t.datetime :updated_at
-      t.string :course_id
-      t.string :course_id
-      t.string :student_id
 
       t.timestamps
     end
