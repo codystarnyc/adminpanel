@@ -6,11 +6,11 @@ class UsersController < ApplicationController
   
   
   def show
-    @users = User.find(params[:id])
+
   end
 
   def edit
-    @users = User.find(params[:id])
+ 
   end
 
   def index
@@ -28,7 +28,7 @@ def update
       format.json { render :show, status: :ok, location: @student }
     else
       format.html { render :edit }
-      format.json { render json: @student.errors, status: :unprocessable_entity }
+      format.json { render json: @users.errors, status: :unprocessable_entity }
     end
   end
 end
