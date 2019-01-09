@@ -62,6 +62,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.5'
 gem 'cancancan', '~> 2.3'
+gem 'sentry-raven', '~> 2.8'
+gem 'pg'
 
 # Use bootstrap theme
 
