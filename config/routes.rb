@@ -2,12 +2,35 @@ Rails.application.routes.draw do
   get 'users/show/:id' => 'users#show'
   get 'users/edit/:id' => 'users#edit'
   get 'users/index' => 'users#index'
-  resources :course_registrations
-  resources :students
-  resources :courses
-  resources :instructors
-  resources :cohorts
+  resources :instructors do
+    member do
+        get :delete
+    end
+end
 
+resources :students do
+    member do
+        get :delete
+    end
+end
+
+resources :courses do
+    member do
+        get :delete
+    end
+end
+
+resources :course_registrations do
+    member do
+        get :delete
+    end
+end
+
+resources :cohorts do
+    member do
+        get :delete
+    end
+end
   root to: 'pages#home'
   get 'dashboard/index' 
   get 'dashboard/home'
