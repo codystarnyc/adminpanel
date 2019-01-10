@@ -1,11 +1,47 @@
-<h1>New Student</h1>
-<% if current_user %>
-<%= render 'form', student: @student %>
-<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-<% else %>
 
-<%= link_to 'Sign up', new_user_registration_path %>
-<%= link_to 'Sign in', new_user_session_path %>
-<% end %>
+  <%= form_for(@student) do |form| %>
+  
+  <div class="modal-body">
+    
+    <div class="field">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name %>
+    </div>
 
-<%= link_to 'Back', students_path %>
+    <div class="field">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :age %>
+           <%= form.number_field :age, min: 0, max: 150 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :education %>
+                    <%= form.select :education, ["High School", "Bachelor's", "Master's", "PHD"] %>
+    </div>
+
+
+    <div class="field">
+      <%= form.label :created_at %>
+      <%= form.datetime_select :created_at %>
+    </div>
+
+    <div class="field">
+      <%= form.label :updated_at %>
+      <%= form.datetime_select :updated_at %>
+    </div>
+
+  <div class="field">
+       <%= form.label :cohort %>
+      <%= form.collection_select :cohort_id, @cohorts, :id, :title, prompt: true %>
+    </div>
+
+  <div class="modal-footer">
+    <%= form.submit %>
+    <% end %>
+  </div>
+
+
