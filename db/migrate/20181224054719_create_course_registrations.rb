@@ -10,7 +10,7 @@ class CreateCourseRegistrations < ActiveRecord::Migration[5.2]
       t.timestamps
     end
     add_index :course_registrations, :cohort_id
-
+n
     add_index :course_registrations, :student_id
   end
 end
