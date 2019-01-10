@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 2019_01_08_023758) do
     t.integer "student_id"
     t.integer "cohort_id"
     t.integer "instructor_id"
-    t.index ["cohort_id"], name: "index_course_registrations_on_cohort_id"
-    t.index ["instructor_id"], name: "index_course_registrations_on_instructor_id"
-    t.index ["student_id"], name: "index_course_registrations_on_student_id"
+    t.index ["cohort_id"], name: "index_cohort_registrations_on_cohort_id"
+    t.index ["instructor_id"], name: "index_cohort_registrations_on_instructor_id"
+    t.index ["student_id"], name: "index_cohort_registrations_on_student_id"
   end
 
   create_table "courses", force: :cascade do |t|

@@ -139,7 +139,7 @@
       <div>
         <%= f.collection_select :student_id, @students, :id, :full_name, prompt: true %>
         <%= f.hidden_field :cohort_id, :value => @cohort.id %>
-        
+        <%= f.hidden_field :instructor_id, :value => @instructors.id %>
       </div>
     </div>
     <%= submit_tag("Enroll Student") %>
