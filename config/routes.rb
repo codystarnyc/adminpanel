@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   get 'users/show/:id' => 'users#show'
   get 'users/edit/:id' => 'users#edit'
   get 'users/index' => 'users#index'
+  get '/users/sign_out' => 'devise/sessions#destroy'
 
   devise_for :users do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+ 
     get '/users/edit/:id' => 'devise/sessions#edit'
     get '/users/show/:id' => 'devise/sessions#show'
 end
