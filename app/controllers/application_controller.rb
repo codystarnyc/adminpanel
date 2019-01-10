@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
-
+    skip_before_action :verify_authenticity_token
     protect_from_forgery with: :exception
     before_action :authenticate_user!
     before_action :configure_permitted_parameters, if: :devise_controller?
-
+   
 
     rescue_from CanCan::AccessDenied do |exception|
       respond_to do |format|
