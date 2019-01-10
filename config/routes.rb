@@ -20,7 +20,11 @@ resources :students do
     end
 end
 
-resources :courses
+resources :courses do
+    member do
+        get :delete
+    end
+end
 
 resources :course_registrations do
     member do
