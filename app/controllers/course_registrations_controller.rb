@@ -11,9 +11,8 @@ class CourseRegistrationsController < ApplicationController
       @course_registration = CourseRegistration.create(course_registration_params)
       @student = Student.find(@course_registration[:student_id])
      
+      if @course_registration.save
       respond_to do |format|
-        if @course_registration.save
-
           format.js 
         else
           format.html { render :new }
@@ -38,6 +37,6 @@ end
           @course_registration = CourseRegistration.find(params[:id])
       end
       def course_registration_params
-          params.require(:course_registration).permit(:cohort_id, :student_id)
+          params.require(:course_registration).permit(:instructor_id, :cohort_id, :student_id)
       end
 end
