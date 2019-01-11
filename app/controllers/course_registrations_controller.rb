@@ -11,8 +11,8 @@ class CourseRegistrationsController < ApplicationController
     @course_registration = CourseRegistration.create(course_registration_params)
     @student = Student.find(@course_registration[:student_id])
     respond_to do |format|
-        format.html
-        format.js { redirect_to cohort_show_path, notice: exception.message }
+        format.html { redirect_to cohort_path, notice: exception.message }
+        format.js 
         end
        
 end
