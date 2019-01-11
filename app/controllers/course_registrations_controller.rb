@@ -11,15 +11,12 @@ class CourseRegistrationsController < ApplicationController
       @course_registration = CourseRegistration.create(course_registration_params)
       @student = Student.find(@course_registration[:student_id])
      
-      if @course_registration.save
+      @course_registration.save
       respond_to do |format|
           format.js 
-        else
-          format.html { render :new }
-          format.json { render json: @student.errors, status: :unprocessable_entity }
         end
   end
-end
+
   def show
   end
 
