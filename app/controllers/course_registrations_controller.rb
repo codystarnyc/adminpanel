@@ -10,7 +10,10 @@ class CourseRegistrationsController < ApplicationController
   def create
     @course_registration = CourseRegistration.create(course_registration_params)
     @student = Student.find(@course_registration[:student_id])
-    flash[:notice] = "#{@student.full_name} was added to course"
+    respond_to do |format|
+        format.html
+        format.js
+        end
        
 end
 
