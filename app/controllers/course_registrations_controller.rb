@@ -8,13 +8,9 @@ class CourseRegistrationsController < ApplicationController
   end
 
   def create
-      @course_registration = CourseRegistration.create(course_registration_params)
-      @student = Student.find(@course_registration[:student_id])
-     
-      @course_registration.save
-        respond_to do |format|
-            format.js 
-          end
+    @course_registration = CourseRegistration.create(course_registration_params)
+    @student = Student.find(@course_registration[:student_id])
+    flash[:notice] = "#{@student.full_name} was added to course"
        
 end
 
