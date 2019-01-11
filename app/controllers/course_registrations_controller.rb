@@ -34,6 +34,6 @@ end
           @course_registration = CourseRegistration.find(params[:id])
       end
       def course_registration_params
-          params.require(:course_registration).permit(:instructor_id, :cohort_id, :student_id)
+          params.require(:course_registration).permit(:cohort_id, :student_id)
       end
 end
