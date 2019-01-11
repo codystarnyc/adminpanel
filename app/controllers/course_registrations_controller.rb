@@ -12,7 +12,7 @@ class CourseRegistrationsController < ApplicationController
     @student = Student.find(@course_registration[:student_id])
     respond_to do |format|
         format.html
-        format.js
+        format.js { redirect_to cohort_show_path, notice: exception.message }
         end
        
 end
