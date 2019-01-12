@@ -10,6 +10,7 @@ class CourseRegistrationsController < ApplicationController
   def create
     @course_registration = CourseRegistration.create(course_registration_params)
     @student = Student.find(@course_registration[:student_id])
+    @cohort = Cohort.find(@course_registration[:cohort_id])
     respond_to do |format|
         format.html { redirect_to @cohort, notice:  'Cohort was successfully created.' }
         format.js 
