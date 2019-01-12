@@ -1,5 +1,2 @@
 $("#model-window").find(".modal-content").html("<%= j (render 'new') %>");
 $('#model-window').modal("show");
-$('#model-window").on('shown.bs.modal', function () {
-	  $('.first_input').focus();
-  });
