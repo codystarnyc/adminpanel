@@ -8,7 +8,7 @@
     <% if can? :manage, User %>
          <%= link_to  cohort_path(cohort), :class => "btn btn-link btn-info btn-just-icon like" do %><i class="material-icons">computer</i><%end%>
          <%= link_to edit_cohort_path(cohort), :class=> "btn btn-link btn-warning btn-just-icon edit" do%><i class="material-icons">edit</i><%end%>
-         <%= link_to delete_cohort, remote: true, :method => :delete,  data: {confirm: "Delete Cohort: #{cohort.title}"}, :class=> "btn btn-link btn-danger btn-just-icon remove" do%><i class="material-icons">close</i><%end%>
+         <%= link_to delete_cohort_path(cohort), remote: true, :method => :delete,  data: {confirm: "Delete Cohort: #{cohort.title}"}, :class=> "btn btn-link btn-danger btn-just-icon remove" do%><i class="material-icons">close</i><%end%>
         <% end %>
   </td>
 </tr>
