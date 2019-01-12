@@ -212,7 +212,7 @@
          <% if can? :manage, User %>
         <td><%= link_to  student, :class => "btn btn-link btn-info btn-just-icon like" do %><i class="material-icons">computer</i><%end%></td>
         <td><%= link_to edit_student_path(student), :class=> "btn btn-link btn-warning btn-just-icon edit" do%><i class="material-icons">edit</i><%end%></td>
-        <td><%= link_to delete_student_path(student), :method => :delete,  data: { confirm: 'Are you sure?' }, :class=> "btn btn-link btn-danger btn-just-icon remove" do%><i class="material-icons">close</i><%end%></td>
+        <td><%= link_to delete_student(student), :method => :delete,  data: { confirm: 'Are you sure?' }, :class=> "btn btn-link btn-danger btn-just-icon remove" do%><i class="material-icons">close</i><%end%></td>
      <% end %>
       </tr>
     <% end %>
