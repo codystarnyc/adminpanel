@@ -8,19 +8,6 @@
 
 
 
-Instructor.create(first_name: "Joan", last_name: "Jett", age: 31, salary: 180000, education: "High School", user_id: 2)
-Instructor.create(first_name: "Bill", last_name: "Withers", age: 42, salary: 200000, education: "Master's", user_id: 3)
-Instructor.create(first_name: "Billie", last_name: "Holiday", age: 65, salary: 220000, education: "PHD", user_id: 4)
-Instructor.create(first_name: "Marshall", last_name: "Mathers", age: 49, salary: 160000, education: "High School", user_id: 5)
-Instructor.create(first_name: "Alice", last_name: "Cooper", age: 63, salary: 150000, education: "Bachelor's", user_id: 6)
-
-Cohort.create(title: "Intro to Rock", start_date: "2018-08-08", end_date: "2018-10-23", instructor_id: 1)
-Cohort.create(title: "Intro to Blues", start_date: "2018-08-08", end_date: "2018-10-23", instructor_id: 2)
-Cohort.create(title: "Intro to Jazz", start_date: "2018-08-08", end_date: "2018-10-23", instructor_id: 3)
-Cohort.create(title: "Intro to Hip Hop", start_date: "2018-08-08", end_date: "2018-10-23", instructor_id: 4)
-
-
-
 Student.create(first_name: "Jenny", last_name: "Moon", age: 19, education: "High School", cohort_id: 1)
 Student.create(first_name: "Lonnie", last_name: "Adams", age: 18, education: "High School", cohort_id: 1)
 Student.create(first_name: "April", last_name: "Oneil", age: 19, education: "High School", cohort_id: 1)
