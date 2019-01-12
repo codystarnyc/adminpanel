@@ -24,7 +24,7 @@ end
   def delete
   end
 
-  def delete
+  def destroy
       @course_registration.destroy
       @student = Student.find(@course_registration[:student_id])
       flash[:notice] = "'#{@student.full_name}' was removed"

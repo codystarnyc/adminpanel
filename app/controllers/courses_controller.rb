@@ -61,7 +61,7 @@ end
 
   # DELETE /courses/1
   # DELETE /courses/1.json
-  def delete
+  def destroy
     @course.destroy
     respond_to do |format|
       format.js
