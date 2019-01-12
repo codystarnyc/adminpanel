@@ -55,7 +55,7 @@ class InstructorsController < ApplicationController
 
   # DELETE /instructors/1
   # DELETE /instructors/1.json
-  def delete
+  def destroy
     @instructor.destroy
     respond_to do |format|
       format.js 
