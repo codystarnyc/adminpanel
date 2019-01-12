@@ -12,7 +12,7 @@ class CohortsController < ApplicationController
   # GET /cohorts/1
   # GET /cohorts/1.json
   def show
-        @cohort = Cohort.find(params[:id])
+        # @cohort = Cohort.find(params[:id])
         # @course_registration = CourseRegistration.new
         # # @students = Student.all.sort
         # @cohort.students << Student.find(params[:q][:student_ids]) if params[:q]    

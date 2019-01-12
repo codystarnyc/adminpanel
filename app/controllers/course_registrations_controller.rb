@@ -10,8 +10,9 @@ class CourseRegistrationsController < ApplicationController
   def create
     @course_registration = CourseRegistration.create(course_registration_params)
     @student = Student.find(@course_registration[:student_id])
+    @cohort = Cohort.find(@course_registrations[:cohort])
     respond_to do |format|
-        format.html { redirect_to cohort_path, notice: exception.message }
+        format.html { redirect_to cohort_path(cohort), notice: exception.message }
         format.js 
         end
        
