@@ -251,9 +251,8 @@ Devise.setup do |config|
   # config.navigational_formats = ['*/*', :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  
-  config.sign_out_via = :get
-  # ==> OmniAuth
+  config.sign_out_via = Rails.env.test? ? :get : :delete
+
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
