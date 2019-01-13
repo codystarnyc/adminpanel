@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'users/index' => 'users#index'
-
+  match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
 
   devise_for :users do
     get 'users/sign_out' => 'devise/sessions#destroy' 
@@ -45,7 +45,7 @@ end
   get 'dashboard/index' 
   get 'dashboard/home'
   get 'students/new' => 'students#new', :as => :new
-
+ 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

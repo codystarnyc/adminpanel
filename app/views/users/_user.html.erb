@@ -8,7 +8,7 @@
         <td>
        <% if can? :manage, User %>
          <%= link_to edit_user_registration_path(user), :class=> "btn btn-link btn-warning btn-just-icon edit" do%><i class="material-icons">edit</i><%end%>
-         <%= link_to dashboard_index_path, remote: true, :method => :delete,  data: { confirm: "Are you sure?"}, :class=> "btn btn-link btn-danger btn-just-icon remove" do%><i class="material-icons">close</i><%end%>
-       <%end%>
+         <%= link_to admin_destroy_user_path(user), remote: true, :method => :delete,  data: { confirm: "Are you sure?"}, :class=> "btn btn-link btn-danger btn-just-icon remove" do%><i class="material-icons">close</i><%end%>
+    <%end%>
         </td>
 </tr>
