@@ -4,6 +4,7 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
 
   def index
+      @users = User.all.order(id: :desc).limit(5)
       @new_courses = Course.all.order(id: :desc).limit(5)
       @new_cohorts = Cohort.all.order(id: :desc).limit(5)
       @new_students = Student.all.order(id: :desc).limit(5)
