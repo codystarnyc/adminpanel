@@ -205,22 +205,8 @@
                         </tr>
                       </tfoot>
                     
-                       <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.admin %></td>
-        <td><%= user.created_at %></td>
-        <td><%= user.updated_at %></td>
-       
-       <% if can? :manage, User %>
-        
-        
-     <% end %>
-      </tr>
-    <% end %>
+                       <tbody id="users">
+   <%= render @users %>
   </tbody>
                        
                     </table>

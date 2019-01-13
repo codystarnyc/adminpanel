@@ -199,9 +199,9 @@
                         </tr>
                       </tfoot>
                     
-  <tbody>
+ 
     <% @students.each do |student| %>
-      <tr>
+      <tr id="student_<%= student.id %>">
         <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
         <td><%= student.age %></td>

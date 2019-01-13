@@ -36,8 +36,8 @@ end
 def destroy
   @users.destroy
   respond_to do |format|
-    format.html { redirect_to userts_url, notice: 'Users was successfully destroyed.' }
-    format.json { head :no_content }
+    format.html { redirect_to users_url, notice: 'Users was successfully destroyed.' }
+    format.js
   end
 end
   private
