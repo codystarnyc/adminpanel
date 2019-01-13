@@ -41,7 +41,7 @@ resources :cohorts do
     end
 end
 
-  root to: 'pages#home'
+  root to: 'dashboard#index'
   get 'dashboard/index' 
   get 'dashboard/home'
   get 'students/new' => 'students#new', :as => :new
