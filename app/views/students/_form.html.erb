@@ -34,10 +34,7 @@
       <%= form.datetime_select :updated_at %>
     </div>
 
-  <div class="field">
-       <%= form.label :cohort %>
-      <%= form.collection_select :cohort_id, @cohorts, :id, :title, prompt: true %>
-    </div>
+  
 
  
     <%= form.submit %>
